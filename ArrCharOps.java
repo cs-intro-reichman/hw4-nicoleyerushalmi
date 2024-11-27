@@ -42,7 +42,6 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         // Replace the following statement with your code
-
         return arr[index];
     }
 
@@ -53,6 +52,9 @@ public class ArrCharOps {
     public static boolean equals(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
         boolean bool = true;
+        if ((arr1.length == 0 || arr2.length == 0)) {
+            bool = true;
+        }
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] != arr2[i]) {
                 bool = false;
@@ -69,6 +71,9 @@ public class ArrCharOps {
     public static int indexOf(char[] arr, char ch) {
         // Replace the following statement with your code
         int is_it = -1;
+        if (arr.length == 0) {
+            is_it = 0;
+        }
         for (int i = 0; i < arr.length; i++) {
             if ((arr[i] == ch)) {
                 is_it = i + 1;
