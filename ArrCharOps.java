@@ -72,11 +72,11 @@ public class ArrCharOps {
         // Replace the following statement with your code
         int is_it = -1;
         if (arr.length == 0) {
-            is_it = 0;
+            is_it = -1;
         }
         for (int i = 0; i < arr.length; i++) {
             if ((arr[i] == ch)) {
-                is_it = i + 1;
+                is_it = i;
             }
         }
         return is_it;
@@ -116,15 +116,19 @@ public class ArrCharOps {
      * Returns an array which is the concatanation of the two given arrays.
      */
     public static char[] concat(char[] arr1, char[] arr2) {
-        // Replace the following statement with your code
         char[] new_arr = new char[arr1.length + arr2.length];
-        for (int i = 0; i < arr1.length; i++) {
-            new_arr[i] = arr1[i];
+        if (arr1.length == 0 && arr2.length == 0) {
+            return new_arr;
+        } else {
+            for (int i = 0; i < arr1.length; i++) {
+                new_arr[i] = arr1[i];
+            }
+            for (int k = arr1.length; k < arr1.length + arr2.length; k++) {
+                new_arr[k] = arr1[k - arr1.length];
+            }
+            return new_arr;
         }
-        for (int k = arr1.length; k < arr1.length + arr2.length; k++) {
-            new_arr[k] = arr1[k - arr1.length];
-        }
-        return new_arr;
+        
     }
 
     /**
