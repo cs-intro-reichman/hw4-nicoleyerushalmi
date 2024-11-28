@@ -192,6 +192,10 @@ public class ArrCharOps {
         if ((arr.length == 0)) {
             return hash_value;
         }
+        if (arr.length == 1) {
+            hash_value = arr[n - 1];
+            return hash_value;
+        }
         if (arr.length < 2) {
             hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
             else {
@@ -202,7 +206,7 @@ public class ArrCharOps {
             hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
         }
         return hash_value;
-    }
+    } 
 
     /**
      * Compares the two strings lexicographically.
@@ -250,9 +254,10 @@ public class ArrCharOps {
                     }
                 } // close for
                 if (code == 0) {
-                    if (str1.length() > str2.length()) {
-                        code = 1;
+                    if (str1.length() < str2.length()) {
+                        code = -1;
                     }
+                    //System.out.println("if str1 > str2" + code);
                 }
             } // close first if
             else {
@@ -265,6 +270,7 @@ public class ArrCharOps {
                         }
                     }
                 } // close for
+                //System.out.println("if str1 > str2" + code);
             }
         }
         return code;
