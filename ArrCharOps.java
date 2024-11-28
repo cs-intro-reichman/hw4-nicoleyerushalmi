@@ -140,7 +140,7 @@ public class ArrCharOps {
                // System.out.println( "first for" + new_arr);
             //}
             //if ((arr1.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
-                for (int k = 0; k < arr2.length - 1; k++) {
+                for (int k = 0; k < arr2.length; k++) {
                     new_arr[k + arr1.length] = arr2[k];
                 }
             //}
