@@ -3,8 +3,10 @@ public class Primes {
         // Replace this statement with your code again
         int n = Integer.parseInt(args[0]);
         boolean [] prime_num = new boolean [n + 1];
+        int[] all_prime = new int [n];
         prime_num[0] = false;
         prime_num[1] = false;
+        int s = 0;
         for(int i = 2; i < prime_num.length; i++){
             prime_num[i] = true;
         }
@@ -15,5 +17,14 @@ public class Primes {
                 }
             }
         }
+        System.out.println("Prime numbers up to " + n + ":");
+        for(int p = 0; p < prime_num.length; p++){
+            if (prime_num[p] == true) {
+                all_prime[s] = p;
+                s++;
+                System.out.println(p);
+            }
+        }
+        System.out.println("There are " + all_prime.length + "primes between 2 and " + n + "(" + (all_prime.length / 100) + "% are primes)");
     }
 }
