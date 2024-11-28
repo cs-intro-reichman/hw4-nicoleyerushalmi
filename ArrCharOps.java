@@ -116,7 +116,7 @@ public class ArrCharOps {
         if (arr.length == 0) {
             is_it = -1;
         } else {
-            for (int i = arr.length -1; i >=0; i--) {
+            for (int i = arr.length - 1; i >= 0; i--) {
                 if ((arr[i] == ch)) {
                     return i;
                 }
@@ -192,19 +192,19 @@ public class ArrCharOps {
             return hash_value;
         }
         // if (arr.length == 1) {
-        //     hash_value = arr[n - 1];
-        //     return hash_value;
+        // hash_value = arr[n - 1];
+        // return hash_value;
         // }
         // if (arr.length < 2) {
-        //    hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
-        //     else {
-            for (int i = 0; i < arr.length; i++) {
-                hash_value = hash_value + (long)(Math.pow(7, n - i - 1)  * arr[i]);
-           }
-           //hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
-        //}
+        // hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
+        // else {
+        for (int i = 0; i < arr.length; i++) {
+            hash_value = hash_value + (long) (Math.pow(7, n - i - 1) * arr[i]);
+        }
+        // hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
+        // }
         return hash_value;
-    } 
+    }
 
     /**
      * Compares the two strings lexicographically.
@@ -238,46 +238,32 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
         int code = 0;
-        if (str1.length() == 0 || str2.length() == 0) {
+        int str1_length = str1.length();
+        int str2_length = str2.length();
+        int small = Math.min(str1_length, str2_length);
+        if (str1_length == 0 || str2_length == 0) {
             return -2;
-            //System.out.println("if str1 == 0 or str2 == 0: " + code);
+            // System.out.println("if str1 == 0 or str2 == 0: " + code);
         }
-            if (str2.length() >= str1.length()) {
-                for (int i = 0; i < str1.length(); i++) {
-                    if (str2.charAt(i) > str1.charAt(i)) {
-                        return 1;
-                        //System.out.println("if str1(i) < str2(i): " + code);
-                    } else {
-                        if (str1.charAt(i) > str2.charAt(i)) {
-                            return -1;
-                            //System.out.println("if str1(i) > str2(i): " + code);
-                        }
-
-                    }
-                } // close for
-                if (code == 0) {
-                    if (str1.length() < str2.length()) {
-                        code = 1;
-                        //System.out.println("if str1(i) = str2(i): " + code); 
-                    }
-                    
-                }
-                //System.out.println("if str1 < str2: " + code);
-            } // close first if
-            else {
-                //System.out.println("new check 2: ");
-                for (int i = 0; i < str2.length(); i++) {
-                    if (str2.charAt(i) > str1.charAt(i)) {
-                        return -1;
-                    } else {
-                        if (str1.charAt(i) > str2.charAt(i)) {
-                            return 1;
-                        }
-                    }
-                } // close for
-                //System.out.println("if str1 > str2: " + code);
+        for (int i = 0; i < small; i++) {
+            if (str2.charAt(i) > str1.charAt(i)) {
+                return -1;
+                // System.out.println("if str1(i) < str2(i): " + code);
             }
-        
+            if (str1.charAt(i) > str2.charAt(i)) {
+                return 1;
+                // System.out.println("if str1(i) > str2(i): " + code);
+            }
+
+        }
+
+        if (str1_length < str2_length) {
+            return -1;
+            // System.out.println("if str1(i) = str2(i): " + code);
+        }
+        if (str1_length > str2_length) {
+            return 1;
+        }
         return code;
 
     }
