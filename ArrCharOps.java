@@ -246,15 +246,15 @@ public class ArrCharOps {
         }
         else {
             if (str2.length() >= str1.length()) {
-                System.out.println("new check");
+                //System.out.println("new check");
                 for (int i = 0; i < str1.length(); i++) {
                     if (str2.charAt(i) > str1.charAt(i)) {
                         code = 1;
-                        System.out.println("if str1(i) < str2(i): " + code);
+                        //System.out.println("if str1(i) < str2(i): " + code);
                     } else {
                         if (str1.charAt(i) > str2.charAt(i)) {
                             code = -1;
-                            System.out.println("if str1(i) > str2(i): " + code);
+                            //System.out.println("if str1(i) > str2(i): " + code);
                         }
 
                     }
@@ -262,14 +262,14 @@ public class ArrCharOps {
                 if (code == 0) {
                     if (str1.length() < str2.length()) {
                         code = 1;
-                        System.out.println("if str1(i) = str2(i): " + code); 
+                        //System.out.println("if str1(i) = str2(i): " + code); 
                     }
                     
                 }
                 //System.out.println("if str1 < str2: " + code);
             } // close first if
             else {
-                System.out.println("new check 2: ");
+                //System.out.println("new check 2: ");
                 for (int i = 0; i < str2.length(); i++) {
                     if (str2.charAt(i) > str1.charAt(i)) {
                         code = -1;
@@ -279,7 +279,7 @@ public class ArrCharOps {
                         }
                     }
                 } // close for
-                System.out.println("if str1 > str2: " + code);
+                //System.out.println("if str1 > str2: " + code);
             }
         }
         return code;
