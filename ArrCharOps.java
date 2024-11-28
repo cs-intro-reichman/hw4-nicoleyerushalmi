@@ -98,7 +98,7 @@ public class ArrCharOps {
         } else {
             for (int i = fromIndex; i < arr.length; i++) {
                 if ((arr[i] == ch)) {
-                    return (i + 1);
+                    return i;
                 }
             }
         }
@@ -187,24 +187,24 @@ public class ArrCharOps {
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
         int hash_value = 0;
-        int n = arr.length;
-        int k = 1;
-        if ((arr.length == 0)) {
-            return hash_value;
-        }
-        if (arr.length == 1) {
-            hash_value = arr[n - 1];
-            return hash_value;
-        }
-        if (arr.length < 2) {
-            hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
-            else {
+        //int n = arr.length;
+        //int k = 1;
+        // if ((arr.length == 0)) {
+        //     return hash_value;
+        // }
+        // if (arr.length == 1) {
+        //     hash_value = arr[n - 1];
+        //     return hash_value;
+        // }
+        //if (arr.length < 2) {
+           // hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
+            //else {
             for (int i = 0; i < arr.length - 2; i++) {
-                hash_value = hash_value + (int) Math.pow((arr[i] * 7), (n - k));
-                k++;
-            }
-            hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
-        }
+                hash_value = hash_value * 7 + arr[i];
+                //k++;
+           }
+           // hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
+        //}
         return hash_value;
     } 
 
