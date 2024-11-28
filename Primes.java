@@ -17,6 +17,7 @@ public class Primes {
                 }
             }
         }
+        System.out.println(prime_num);
         System.out.println("Prime numbers up to " + n + ":");
         for(int p = 0; p < prime_num.length; p++){
             if (prime_num[p] == true) {
@@ -25,6 +26,8 @@ public class Primes {
                 System.out.println(p);
             }
         }
-        System.out.println("There are " + all_prime.length + "primes between 2 and " + n + "(" + (all_prime.length / 100) + "% are primes)");
+        System.out.println(all_prime);
+        double percent =((double) ((double)all_prime.length/prime_num.length)) * 100;
+        System.out.println("There are " + all_prime.length + " primes between 2 and " + n + " (" + percent + "% are primes)");
     }
 }
