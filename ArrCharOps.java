@@ -133,16 +133,18 @@ public class ArrCharOps {
         if (arr1.length == 0 && arr2.length == 0) {
             return new_arr;
         } else {
-            if ((arr2.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
+            //if ((arr2.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
                 for (int i = 0; i < arr1.length; i++) {
                     new_arr[i] = arr1[i];
                 }
-            }
-            if ((arr1.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
-                for (int k = arr1.length; k < arr1.length + arr2.length; k++) {
-                    new_arr[k] = arr1[k - arr1.length];
+               // System.out.println( "first for" + new_arr);
+            //}
+            //if ((arr1.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
+                for (int k = 0; k < arr2.length - 1; k++) {
+                    new_arr[k + arr1.length] = arr2[k];
                 }
-            }
+            //}
+           // System.out.println( "second for" + new_arr);
             return new_arr;
         }
 
