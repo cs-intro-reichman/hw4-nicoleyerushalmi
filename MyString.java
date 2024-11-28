@@ -27,27 +27,38 @@ public class MyString {
         // Replace the following statement with your code
         str1 = lowerCase(str1);
         str2 = lowerCase(str2);
-        boolean[] arr = new boolean[str2.length()];
-        for (int i = 0; i < str1.length(); i++) {
-            if ((str1.length() - i + 1) < (str2.length())) {
-                //System.out.println(str1.length() - i);
-                //System.out.println(str2.length() + 1);
-                return false;
-            }
-            int counter = 0;
-            for (int k = 0; k < str2.length(); k++) {
-                if (str1.charAt(i) == str2.charAt(k)) {
-                    for (int t = 0; t < str2.length(); t++) {
-                        if (str1.charAt(i + t) == str2.charAt(t)) {
-                            counter++;
-                        }
-                    }
-                    if (counter == str2.length()) {
-                        return true;
-                    }
-                }
-            }
+        boolean bool = true;
+        if ((str2.length() == 0)) {
+            return true;
         }
+        //boolean[] arr = new boolean[str2.length()];
+        // for (int i = 0; i < str1.length() - str2.length(); i++) {
+        //     if ((str1.length() - i + 1) < (str2.length())) {
+        //         //System.out.println(str1.length() - i);
+        //         //System.out.println(str2.length() + 1);
+        //         bool = false;
+        //         return bool;
+        //     }
+            //int counter = 0;
+            for (int k = 0; k < str1.length() - str2.length(); k++) {
+                if (str1.charAt(k) == str2.charAt(k)) {
+                    bool = true;
+                }else{bool = false; break;}
+
+                //     for (int t = 0; t < str2.length(); t++) {
+                //         if (str1.charAt(i + t) != str2.charAt(t)) {
+                //             bool = false;
+                //             break;
+                //         }
+                //     }
+                //     if (bool) {
+                //         return true;
+                //     }
+                // }
+            }
+            if ((bool)) {
+                return true;
+            }
         return false;
 
     }
