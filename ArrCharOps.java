@@ -42,6 +42,9 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         // Replace the following statement with your code
+        if ((arr.length == 0)) {
+            return 0;
+        }
         return arr[index];
     }
 
@@ -54,10 +57,11 @@ public class ArrCharOps {
         boolean bool = true;
         if ((arr1.length == 0 || arr2.length == 0)) {
             bool = true;
-        }
-        for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] != arr2[i]) {
-                bool = false;
+        } else {
+            for (int i = 0; i < arr1.length; i++) {
+                if (arr1[i] != arr2[i]) {
+                    bool = false;
+                }
             }
         }
         return bool;
@@ -73,10 +77,11 @@ public class ArrCharOps {
         int is_it = -1;
         if (arr.length == 0) {
             is_it = -1;
-        }
-        for (int i = 0; i < arr.length; i++) {
-            if ((arr[i] == ch)) {
-                is_it = i;
+        } else {
+            for (int i = 0; i < arr.length; i++) {
+                if ((arr[i] == ch)) {
+                    is_it = i;
+                }
             }
         }
         return is_it;
@@ -88,9 +93,13 @@ public class ArrCharOps {
     public static int indexOf(char[] arr, char ch, int fromIndex) {
         // Replace the following statement with your code
         int is_it = -1;
-        for (int i = fromIndex; i < arr.length; i++) {
-            if ((arr[i] == ch)) {
-                is_it = i + 1;
+        if (arr.length == 0) {
+            is_it = -1;
+        } else {
+            for (int i = fromIndex; i < arr.length; i++) {
+                if ((arr[i] == ch)) {
+                    is_it = i + 1;
+                }
             }
         }
         return is_it;
@@ -104,9 +113,13 @@ public class ArrCharOps {
     public static int lastIndexOf(char[] arr, char ch) {
         // Replace the following statement with your code
         int is_it = -1;
-        for (int i = arr.length; i < 0; i--) {
-            if ((arr[i] == ch)) {
-                is_it = i + 1;
+        if (arr.length == 0) {
+            is_it = -1;
+        } else {
+            for (int i = arr.length; i < 0; i--) {
+                if ((arr[i] == ch)) {
+                    is_it = i + 1;
+                }
             }
         }
         return is_it;
@@ -120,15 +133,19 @@ public class ArrCharOps {
         if (arr1.length == 0 && arr2.length == 0) {
             return new_arr;
         } else {
-            for (int i = 0; i < arr1.length; i++) {
-                new_arr[i] = arr1[i];
+            if ((arr2.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
+                for (int i = 0; i < arr1.length; i++) {
+                    new_arr[i] = arr1[i];
+                }
             }
-            for (int k = arr1.length; k < arr1.length + arr2.length; k++) {
-                new_arr[k] = arr1[k - arr1.length];
+            if ((arr1.length == 0) || (arr1.length > 0 && arr2.length > 0)) {
+                for (int k = arr1.length; k < arr1.length + arr2.length; k++) {
+                    new_arr[k] = arr1[k - arr1.length];
+                }
             }
             return new_arr;
         }
-        
+
     }
 
     /**
@@ -143,6 +160,9 @@ public class ArrCharOps {
         // Replace the following statement with your code
         char[] new_arr1 = new char[endIndex - beginIndex];
         int k = 0;
+        if ((arr.length == 0)) {
+            return new_arr1;
+        }
         for (int i = beginIndex; i < endIndex; i++) {
             new_arr1[k] = arr[i];
             k++;
