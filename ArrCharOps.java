@@ -186,24 +186,22 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
-        int hash_value = 0;
-        //int n = arr.length;
-        //int k = 1;
-        // if ((arr.length == 0)) {
-        //     return hash_value;
-        // }
+        long hash_value = 0;
+        int n = arr.length;
+        if ((arr.length == 0)) {
+            return hash_value;
+        }
         // if (arr.length == 1) {
         //     hash_value = arr[n - 1];
         //     return hash_value;
         // }
-        //if (arr.length < 2) {
-           // hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
-            //else {
-            for (int i = 0; i < arr.length - 2; i++) {
-                hash_value = hash_value * 7 + arr[i];
-                //k++;
+        // if (arr.length < 2) {
+        //    hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);}
+        //     else {
+            for (int i = 0; i < arr.length; i++) {
+                hash_value = hash_value + (long)(Math.pow(7, n - i - 1)  * arr[i]);
            }
-           // hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
+           //hash_value = hash_value + arr[n - 1] + (arr[n - 2] * 7);
         //}
         return hash_value;
     } 
@@ -241,19 +239,17 @@ public class ArrCharOps {
         // Replace the following statement with your code
         int code = 0;
         if (str1.length() == 0 || str2.length() == 0) {
-            code = -2;
-            System.out.println("if str1 == 0 or str2 == 0: " + code);
+            return -2;
+            //System.out.println("if str1 == 0 or str2 == 0: " + code);
         }
-        else {
             if (str2.length() >= str1.length()) {
-                //System.out.println("new check");
                 for (int i = 0; i < str1.length(); i++) {
                     if (str2.charAt(i) > str1.charAt(i)) {
-                        code = 1;
+                        return 1;
                         //System.out.println("if str1(i) < str2(i): " + code);
                     } else {
                         if (str1.charAt(i) > str2.charAt(i)) {
-                            code = -1;
+                            return -1;
                             //System.out.println("if str1(i) > str2(i): " + code);
                         }
 
@@ -272,16 +268,16 @@ public class ArrCharOps {
                 //System.out.println("new check 2: ");
                 for (int i = 0; i < str2.length(); i++) {
                     if (str2.charAt(i) > str1.charAt(i)) {
-                        code = -1;
+                        return -1;
                     } else {
                         if (str1.charAt(i) > str2.charAt(i)) {
-                            code = 1;
+                            return 1;
                         }
                     }
                 } // close for
                 //System.out.println("if str1 > str2: " + code);
             }
-        }
+        
         return code;
 
     }
