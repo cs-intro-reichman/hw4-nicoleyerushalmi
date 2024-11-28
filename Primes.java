@@ -12,12 +12,12 @@ public class Primes {
         }
         for(int k = 2; k < Math.sqrt(n); k ++){
             for(int t = k; t < prime_num.length; t++){
-                if (t % k == 0) {
+                if (t % k == 0 && t != k) {
                     prime_num[t] = false;
+                    System.out.println( " k = " + k + " t = " + t);
                 }
             }
         }
-        System.out.println(prime_num);
         System.out.println("Prime numbers up to " + n + ":");
         for(int p = 0; p < prime_num.length; p++){
             if (prime_num[p] == true) {
@@ -26,7 +26,6 @@ public class Primes {
                 System.out.println(p);
             }
         }
-        System.out.println(all_prime);
         double percent =((double) ((double)all_prime.length/prime_num.length)) * 100;
         System.out.println("There are " + all_prime.length + " primes between 2 and " + n + " (" + percent + "% are primes)");
     }
