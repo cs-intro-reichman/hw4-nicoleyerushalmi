@@ -23,30 +23,34 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
-        String choose_word = "";
+       // String choose_word = "";
         for (int i = 0; i < sentences.length; i++) { // go thrugh the sentences and brine 1
-            int index_of_word = 0;
-            int index_end_word = 0;
+           // int index_of_word = 0;
+           // int index_end_word = 0;
             String now_sen = sentences[i];
-            for (int s = 0; s < now_sen.length(); s++) { // all char in sentence
-                if (now_sen.charAt(s) == ' ' || (s == now_sen.length() - 1)) {
-                    choose_word = now_sen.substring(index_of_word, s);
+            String[] words = now_sen.split(" ");
+            // for (int s = 0; s < now_sen.length(); s++) { // all char in sentence
+            //     if (now_sen.charAt(s) == ' ' || (s == now_sen.length() - 1)) {
+            //         choose_word = now_sen.substring(index_of_word, s);
                     
-                }else{
-                    choose_word = now_sen.substring(index_of_word, s + 1);
-                    break;
-                }
-                index_of_word = s + 1;
-            }
+            //     }else{
+            //         choose_word = now_sen.substring(index_of_word, s + 1);
+            //         break;
+            //     }
+            //     index_of_word = s + 1;
+            // }
             // System.out.println(s);
             // System.out.println(index_end_word);
-            for (int k = 0; k < keywords.length; k++) { // go throw
-                if (contains(choose_word.toLowerCase(), keywords[k].toLowerCase()) == true) {
-                    System.out.println(now_sen);
-                    break;
+            for(int s = 0; s < words.length; s++){
+                for (int k = 0; k < keywords.length; k++) { // go throw
+                    if (contains(words[s].toLowerCase(), keywords[k].toLowerCase()) == true) {
+                        System.out.println(now_sen);
+                        break;
+                    }
+    
                 }
-
             }
+         
         }
 
     }
