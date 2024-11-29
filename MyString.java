@@ -40,27 +40,32 @@ public class MyString {
         //         return bool;
         //     }
             //int counter = 0;
-            for (int k = 0; k < str1.length() - str2.length(); k++) {
-                if (str1.charAt(k) == str2.charAt(k)) {
+            // for (int k = 0; k <= str1.length() - str2.length(); k++) {
+            //     if (str1.charAt(k) == str2.charAt(k)) {
+            //         for(int i = 0; i< str2.length(); i++){
+            //             if (str1.charAt(k + i) == str2.charAt(i)) {
+            //                 bool = true;
+            //             }else{bool = false; break;}
+            //         }
+            //     }
+                for(int i = 0; i <= str1.length() - str2.length(); i++){
                     bool = true;
-                }else{bool = false; break;}
+                    for (int t = 0; t < str2.length(); t++) {
+                        if (str1.charAt(i + t) != str2.charAt(t)) {
+                            bool = false;
+                            break;
+                        }
+                    }
+                    if (bool) {
+                        return true;
+                    }
+                }
+    // }
+    // if ((bool)) {
+    // return true;
+    // }
+    return false;
 
-                //     for (int t = 0; t < str2.length(); t++) {
-                //         if (str1.charAt(i + t) != str2.charAt(t)) {
-                //             bool = false;
-                //             break;
-                //         }
-                //     }
-                //     if (bool) {
-                //         return true;
-                //     }
-                // }
-            }
-            if ((bool)) {
-                return true;
-            }
-        return false;
-
-    }
+}
 
 }
