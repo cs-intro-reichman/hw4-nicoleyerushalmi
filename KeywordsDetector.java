@@ -25,16 +25,73 @@ public class KeywordsDetector {
         // Replace this comment with your code
         String choose_word = "";
         for (int i = 0; i < sentences.length; i++) { // go thrugh the sentences and brine 1
-            for (int t = 0; t < sentences[i].length(); t++) { // go throw the length of sentences and check number of string inside
-                choose_word = sentences[i].substring(sentences[i].indexOf(" "), sentences[i].indexOf(" "));
-                for (int k = 0; k < keywords.length; k++) { // go throw 
-                    if (choose_word == keywords[k]) {
-                        System.out.println(sentences[i]);
-                        break;
-                    }
+            int index_of_word = 0;
+            int index_end_word = 0;
+            String now_sen = sentences[i];
+            for (int s = 0; s < now_sen.length(); s++) { // all char in sentence
+                if (now_sen.charAt(s) == ' ' || (s == now_sen.length() - 1)) {
+                    choose_word = now_sen.substring(index_of_word, s);
+                    
+                }else{
+                    choose_word = now_sen.substring(index_of_word, s + 1);
+                    break;
+                }
+                index_of_word = s + 1;
+            }
+            // System.out.println(s);
+            // System.out.println(index_end_word);
+            for (int k = 0; k < keywords.length; k++) { // go throw
+                if (contains(choose_word.toLowerCase(), keywords[k].toLowerCase()) == true) {
+                    System.out.println(now_sen);
+                    break;
+                }
+
+            }
+        }
+
+    }
+
+    // for (int t = 0; t < sentences[i].length(); t++) { // go throw the length of
+    // sentences and seprate words
+    // index_end_word = sentences[i].indexOf(" ");
+    // t = index_of_word;
+    // index_of_word = index_end_word;
+
+    // }
+    // choose_word=sentences[i].substring(sentences[i].charAt(index_of_word),sentences[i].charAt(index_end_word));
+
+    // s =
+
+    // if (sentences[i].charAt(k) != keywords[k].charAt(k)) {
+    // break;
+    // break;
+    // }
+    // char [] only_sentence = new char[sentences[i].length()];
+    // System.out.println(sentences[i].length());
+
+    public static boolean contains(String str1, String str2) {
+        // Replace the following statement with your code
+        // str1 = lowerCase(str1);
+        // str2 = lowerCase(str2);
+        boolean bool = true;
+        if ((str2.length() == 0)) {
+            return true;
+        }
+
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            bool = true;
+            for (int t = 0; t < str2.length(); t++) {
+                if (str1.charAt(i + t) != str2.charAt(t)) {
+                    bool = false;
+                    break;
                 }
             }
-
+            if (bool) {
+                return true;
+            }
         }
+        return false;
     }
 }
+
+// seprate words
