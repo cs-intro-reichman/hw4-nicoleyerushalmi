@@ -31,23 +31,7 @@ public class MyString {
         if ((str2.length() == 0)) {
             return true;
         }
-        //boolean[] arr = new boolean[str2.length()];
-        // for (int i = 0; i < str1.length() - str2.length(); i++) {
-        //     if ((str1.length() - i + 1) < (str2.length())) {
-        //         //System.out.println(str1.length() - i);
-        //         //System.out.println(str2.length() + 1);
-        //         bool = false;
-        //         return bool;
-        //     }
-            //int counter = 0;
-            // for (int k = 0; k <= str1.length() - str2.length(); k++) {
-            //     if (str1.charAt(k) == str2.charAt(k)) {
-            //         for(int i = 0; i< str2.length(); i++){
-            //             if (str1.charAt(k + i) == str2.charAt(i)) {
-            //                 bool = true;
-            //             }else{bool = false; break;}
-            //         }
-            //     }
+       
                 for(int i = 0; i <= str1.length() - str2.length(); i++){
                     bool = true;
                     for (int t = 0; t < str2.length(); t++) {
@@ -60,10 +44,6 @@ public class MyString {
                         return true;
                     }
                 }
-    // }
-    // if ((bool)) {
-    // return true;
-    // }
     return false;
 
 }
