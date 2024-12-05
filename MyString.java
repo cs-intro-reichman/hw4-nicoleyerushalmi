@@ -25,7 +25,7 @@ public class MyString {
         }
         for(int i = 0; i < str.length(); i++){
             char ch = str.charAt(i);
-            if ((str.charAt(i) > 'A' && str.charAt(i) < 'Z')) {
+            if ((str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')) {
                  ch = (char)(ch + 32);
                  new_string = new_string + ch;
             }else{
